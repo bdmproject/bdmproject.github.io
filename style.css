@@ -1,0 +1,222 @@
+:root {
+  --primary: #ffee00;
+  --secondary: #ff9100;
+  --dark: #000000;
+  --light: #f8fafc;
+  --gray: #94a3b8;
+  --card-bg: rgba(255, 255, 255, 0.08);
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #000000, #000000);
+  color: var(--light);
+  min-height: 100vh;
+  padding: 2rem;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+header {
+  text-align: center;
+  padding: 3rem 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.name-title {
+  margin-bottom: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.name {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #e0e7ff, #c7d2fe);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: -0.5px;
+}
+
+.tagline {
+  color: var(--gray);
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.social-link {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--light);
+  font-size: 1.4rem;
+  transition: var(--transition);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-link:hover {
+  transform: translateY(-5px);
+  background: var(--primary);
+  box-shadow: 0 5px 20px rgba(99, 102, 241, 0.4);
+}
+
+.projects-section {
+  margin-top: 2rem;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  border-radius: 3px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.project-card {
+  background: var(--card-bg);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: var(--transition);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  border-color: rgba(99, 102, 241, 0.3);
+}
+
+.project-image-wrapper {
+  width: 100%;
+  height: 180px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.project-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: var(--transition);
+}
+
+.project-content {
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  color: #e0e7ff;
+}
+
+.project-description {
+  color: var(--gray);
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.project-link {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: var(--transition);
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.project-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 7px 20px rgba(99, 102, 241, 0.5);
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.logo {
+  animation: float 4s ease-in-out infinite;
+}
+
+@media (max-width: 600px) {
+  .name {
+    font-size: 2rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  header {
+    padding: 2rem 1rem;
+  }
+}
